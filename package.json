@@ -1,0 +1,24 @@
+{
+  "name": "websocket-thing",
+  "version": "0.0.1",
+  "description": "a websocket thing",
+  "main": "lib/server.js",
+  "scripts": {
+    "test": "echo \"Eat my fucking ass.\" && exit 1",
+    "tsc-init": "tsc --init",
+    "server": "cd lib/server && nodemon server.ts",
+    "client": "cd lib/client && nodemon client.ts"
+  },
+  "author": "<github/dylanjamesdev>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/ws": "^8.5.3",
+    "axios": "^0.27.2",
+    "nodemon": "^2.0.19",
+    "os": "^0.1.2",
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.8.3",
+    "ws": "^8.8.1"
+  }
+}
