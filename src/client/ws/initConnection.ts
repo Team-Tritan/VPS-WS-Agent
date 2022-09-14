@@ -5,9 +5,9 @@ import {
   formatSeconds,
   formatBytes,
   getExternalIP,
-} from "../functions/dataHandling";
+} from "../functions/data";
 
-export async function initWsClient() {
+export async function initWsConnection() {
   let ws = new WebSocket(`${config.hostname}:${config.port}`);
   let ip = await getExternalIP();
 

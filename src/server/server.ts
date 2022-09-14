@@ -1,26 +1,7 @@
-import WebSocketServer, { WebSocket } from "ws";
+import WebSocketServer from "ws";
 import config from "../../config";
+import handleEvents from "./ws/wsEvents";
 
-var server = new WebSocketServer.Server({ port: config.port });
+const server = new WebSocketServer.Server({ port: config.port });
 
-server.on("listening", () =>
-  console.log(`[WS Server] --> Listening on port ${config.port}.`)
-);
-
-server.on("connection", (ws: WebSocket) => {
-  console.log("[WS Server] --> Node Connected");
-
-  ws.on("message", (data: any) => {
-    console.log(`[WS Server] Data Received: ${data}`);
-    let parsed = JSON.parse(data);
-    // do stuff wiff data
-  });
-
-  ws.on("close", () => {
-    console.log("[WS Server] Client closed connection.");
-  });
-
-  ws.onerror = function (error) {
-    console.error("[WS Server] Error: ", error);
-  };
-});
+handleEvents(server, config);

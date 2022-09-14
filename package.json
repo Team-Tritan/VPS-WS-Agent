@@ -7,7 +7,7 @@
     "test": "echo \"Eat my fucking ass.\" && exit 1",
     "tsc-init": "tsc --init",
     "server": "cd src/server && nodemon server.ts",
-    "client": "cd src/client && nodemon client.ts"
+    "agent": "cd src/client && nodemon agent.ts"
   },
   "author": "<github/dylanjamesdev>",
   "license": "ISC",

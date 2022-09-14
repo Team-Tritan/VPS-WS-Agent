@@ -1,6 +1,6 @@
 ## Client
 
-- npm run client
+- npm run agent
 
 ## Server
 
