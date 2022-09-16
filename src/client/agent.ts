@@ -3,7 +3,7 @@ import { pushData } from "./functions/pushData";
 import config from "../../config";
 
 class Agent {
-  ws = new WebSocket(`ws://${config.hostname}:${config.ws_port}`);
+  ws: WebSocket = new WebSocket(`ws://${config.hostname}:${config.ws_port}`);
 
   constructor() {
     this.hewwo();
