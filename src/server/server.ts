@@ -3,7 +3,7 @@ import config from "../../config";
 import { handleWsEvents } from "./functions/handleEvents";
 import { initDatabase } from "./functions/database";
 
-class App {
+class Server {
   server = new WebSocketServer.Server({ port: config.ws_port });
   config = config;
   constructor() {
@@ -12,4 +12,4 @@ class App {
   }
 }
 
-new App();
+new Server();
