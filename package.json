@@ -12,8 +12,10 @@
   "author": "<github/dylanjamesdev>",
   "license": "ISC",
   "dependencies": {
+    "@types/mongoose": "^5.11.97",
     "@types/ws": "^8.5.3",
     "axios": "^0.27.2",
+    "mongoose": "6.1.1",
     "nodemon": "^2.0.19",
     "os": "^0.1.2",
     "ts-node": "^10.9.1",

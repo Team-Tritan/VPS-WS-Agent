@@ -1,3 +1,9 @@
-import { initWsConnection } from "./ws/initConnection";
-console.log(`[WS Client] --> Started, will attempt connect in 1 minute.`);
-setInterval(() => initWsConnection(), 1 * 60000);
+import { initWsConnection } from "./ws/websocketClient";
+
+console.log(
+  `[WS Agent] --> Agent started, will attempt connection in 1 minute.`
+);
+
+setInterval(() => {
+  initWsConnection();
+}, 1 * 60000);
