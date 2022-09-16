@@ -1,4 +1,4 @@
-export default function limit(rate: any, max: any) {
+export async function limit(rate: any, max: any) {
   const clients: any[] = [];
 
   setInterval(() => {
@@ -8,6 +8,7 @@ export default function limit(rate: any, max: any) {
 
   return function limit(server: any) {
     server.messageCount = 0;
+
     server.on("newListener", function (name: any, listener: any) {
       if (name !== "message" || listener._rated) return;
 
@@ -15,6 +16,7 @@ export default function limit(rate: any, max: any) {
         if (server.messageCount++ < max) listener(data, flags);
         else server.emit("limited", data, flags);
       }
+
       ratedListener._rated = true;
       server.on("message", ratedListener);
 

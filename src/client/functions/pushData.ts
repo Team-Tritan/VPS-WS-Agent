@@ -1,4 +1,3 @@
-import WebSocket from "ws";
 import os from "os";
 import config from "../../../config";
 import { formatSeconds, formatBytes } from "./parseData";

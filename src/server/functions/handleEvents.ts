@@ -1,6 +1,6 @@
 import { WebSocket } from "ws";
 import { createOrUpdate } from "./database";
-import limit from "../functions/limit";
+import { limit } from "../functions/limit";
 
 export function handleWsEvents(server: any, config: any) {
   server.on("listening", () =>
