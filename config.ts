@@ -3,3 +3,5 @@ export default {
   port: 8080,
   mongodb: "mongodb://tritan.colo-fl.myinfra.lol:27017/WS-Server",
 };
+
+

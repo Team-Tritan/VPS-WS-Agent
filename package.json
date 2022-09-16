@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Eat my fucking ass.\" && exit 1",
     "tsc-init": "tsc --init",
-    "server": "cd src/server && nodemon server.ts",
-    "agent": "cd src/client && nodemon agent.ts"
+    "dev-server": "cd src/server && nodemon server.ts",
+    "dev-agent": "cd src/client && nodemon agent.ts",
+    "build": "tsc --build",
+    "prod-server": "cd dist/src/server && nodemon server.js",
+    "prod-agent": "cd dist/src/client && nodemon agent.js"
   },
   "author": "<github/dylanjamesdev>",
   "license": "ISC",
