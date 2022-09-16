@@ -13,6 +13,8 @@ export async function createOrUpdate(parsed: any) {
   let x = await dataModel.findOne({ hostname: parsed.hostname });
 
   if (!x) {
+    console.log(`[WS Server] --> Encountered new agent on ${parsed.hostname}.`);
+
     await new dataModel({
       hostname: parsed.hostname,
       data: [

@@ -1,5 +1,6 @@
 import { WebSocket } from "ws";
 import { createOrUpdate } from "./database";
+import limit from "../functions/limit";
 
 export function handleWsEvents(server: any, config: any) {
   server.on("listening", () =>
@@ -11,8 +12,10 @@ export function handleWsEvents(server: any, config: any) {
   server.on("connection", (ws: WebSocket, _req: any) => {
     console.log(`[WS Server] --> ${server.clients.size} client(s) connected.`);
 
+    limit(config.agent_update_ms, 1);
+
     ws.on("message", async (data: any) => {
-      console.log(`[WS Server] --> Client sent data: ${data}`);
+      console.log(`[WS Server] --> Server received data: ${data}`);
       let parsed = JSON.parse(data);
       createOrUpdate(parsed);
     });
