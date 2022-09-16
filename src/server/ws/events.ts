@@ -1,16 +1,16 @@
 import { WebSocket } from "ws";
-import { createOrUpdate } from "../db/dbFunctions";
+import { createOrUpdate } from "../db/functions";
 
-export default function wsEvents(server: any, config: any) {
+export function handleWsEvents(server: any, config: any) {
   server.on("listening", () =>
-    console.log(`[WS Server] --> Listening on port ${config.port}.`)
+    console.log(`[WS Server] --> WS server listening on port ${config.port}.`)
   );
 
   server.on("connection", (ws: WebSocket) => {
-    console.log("[WS Server] --> Node Connected");
+    console.log(`[WS Server] --> ${server.clients.size} client(s) connected.`);
 
     ws.on("message", async (data: any) => {
-      console.log(`[WS Server] --> Data Received: ${data}`);
+      console.log(`[WS Server] --> Client sent data: ${data}`);
       let parsed = JSON.parse(data);
       createOrUpdate(parsed);
     });

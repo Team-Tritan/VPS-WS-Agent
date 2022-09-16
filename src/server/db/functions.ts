@@ -13,8 +13,6 @@ export async function createOrUpdate(parsed: any) {
   let x = await dataModel.findOne({ hostname: parsed.hostname });
 
   if (!x) {
-    console.log("[WS Server] --> Machine not found, creating record.");
-
     await new dataModel({
       hostname: parsed.hostname,
       data: [
@@ -27,7 +25,6 @@ export async function createOrUpdate(parsed: any) {
         },
       ],
     }).save();
-    console.log("[WS Server] --> Data has been recorded.");
 
     return;
   } else {
@@ -42,8 +39,6 @@ export async function createOrUpdate(parsed: any) {
         },
       },
     });
-
-    console.log("[WS Server] --> Data has been recorded.");
     return;
   }
 }

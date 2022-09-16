@@ -1,14 +1,14 @@
 import WebSocketServer from "ws";
 import config from "../../config";
-import handleEvents from "./ws/wsEvents";
-import { initDatabaseConnection } from "./db/dbFunctions";
+import { handleWsEvents } from "./ws/events";
+import { initDatabaseConnection } from "./db/functions";
 
-export default class App {
+class App {
   server = new WebSocketServer.Server({ port: config.port });
-
+  config = config;
   constructor() {
     initDatabaseConnection(this.server);
-    handleEvents(this.server, config);
+    handleWsEvents(this.server, this.config);
   }
 }
 
