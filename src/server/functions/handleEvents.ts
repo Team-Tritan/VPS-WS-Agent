@@ -1,5 +1,5 @@
 import { WebSocket } from "ws";
-import * as db from "../db/functions";
+import { createOrUpdate } from "./database";
 
 export function handleWsEvents(server: any, config: any) {
   server.on("listening", () =>
@@ -14,7 +14,7 @@ export function handleWsEvents(server: any, config: any) {
     ws.on("message", async (data: any) => {
       console.log(`[WS Server] --> Client sent data: ${data}`);
       let parsed = JSON.parse(data);
-      db.createOrUpdate(parsed);
+      createOrUpdate(parsed);
     });
 
     ws.on("close", () => {

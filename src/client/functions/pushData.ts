@@ -18,7 +18,7 @@ export async function pushData(ws: any) {
   ws.send(JSON.stringify(info));
 
   console.log(
-    `[WS Agent] --> Payload sent, waiting ${config.agent_refresh_ms}ms. `,
+    `[WS Agent] --> Payload sent, waiting ${config.agent_update_ms}ms. `,
     JSON.stringify(info)
   );
 }

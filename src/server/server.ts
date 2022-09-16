@@ -1,13 +1,13 @@
 import WebSocketServer from "ws";
 import config from "../../config";
-import { handleWsEvents } from "./ws/events";
-import { initDatabaseConnection } from "./db/functions";
+import { handleWsEvents } from "./functions/handleEvents";
+import { initDatabase } from "./functions/database";
 
 class App {
   server = new WebSocketServer.Server({ port: config.ws_port });
   config = config;
   constructor() {
-    initDatabaseConnection(this.server);
+    initDatabase(this.server);
     handleWsEvents(this.server, this.config);
   }
 }

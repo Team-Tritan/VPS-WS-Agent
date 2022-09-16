@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 import config from "../../../config";
-import dataModel from "./dataModel";
+import dataModel from "../models/dataModel";
 
-export async function initDatabaseConnection(server: any) {
+export async function initDatabase(server: any) {
   server.db = await mongoose.connect(config.mongodb).then((mongoose: any) => {
     console.log(`[WS Server] --> Connected to db, ${config.mongodb}.`);
     return mongoose;
