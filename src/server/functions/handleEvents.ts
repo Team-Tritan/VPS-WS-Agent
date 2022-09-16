@@ -1,8 +1,8 @@
-import { WebSocket } from "ws";
+import { WebSocket, Server } from "ws";
 import { createOrUpdate } from "./database";
 import { limit } from "../functions/limit";
 
-export function handleWsEvents(server: any, config: any) {
+export function handleWsEvents(server: Server, config: any) {
   server.on("listening", () =>
     console.log(
       `[WS Server] --> WS server listening on ws://${config.hostname}:${config.ws_port}.`
