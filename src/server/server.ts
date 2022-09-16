@@ -1,15 +1,20 @@
-import WebSocketServer from "ws";
+import { Server } from "ws";
 import config from "../../config";
-import { handleWsEvents } from "./functions/handleEvents";
 import { initDatabase } from "./functions/database";
+import { handleWsEvents } from "./functions/handleEvents";
 
-class Server {
-  server = new WebSocketServer.Server({ port: config.ws_port });
+class WebSuccItServer {
+  server = new Server({ port: config.ws_port });
   config = config;
+
   constructor() {
+    this.buildLazily();
+  }
+
+  buildLazily() {
     initDatabase(this.server);
     handleWsEvents(this.server, this.config);
   }
 }
 
-new Server();
+new WebSuccItServer();
