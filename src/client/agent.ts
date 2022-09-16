@@ -6,20 +6,20 @@ class Agent {
   ws = new WebSocket(`ws://${config.hostname}:${config.ws_port}`);
 
   constructor() {
-    this.acknowledge();
-    this.onOpen();
-    this.sendData();
-    this.onClose();
-    this.onError();
+    this.hewwo();
+    this.open();
+    this.send();
+    this.close();
+    this.error();
   }
 
-  acknowledge() {
+  hewwo() {
     console.log(
       `[WS Agent] Agent started, will post data every ${config.agent_update_ms}ms.`
     );
   }
 
-  onOpen() {
+  open() {
     this.ws.onopen = function () {
       console.log(
         `[WS Agent] --> Connection initiated to ws server, ws://${config.hostname}:${config.ws_port}.`
@@ -27,13 +27,13 @@ class Agent {
     };
   }
 
-  sendData() {
+  send() {
     setInterval(() => {
       pushData(this.ws);
     }, config.agent_update_ms);
   }
 
-  onClose() {
+  close() {
     this.ws.onclose = function (e: any) {
       console.log("[WS Agent] --> Socket is closed. Restarting.", e.reason);
 
@@ -41,7 +41,7 @@ class Agent {
     };
   }
 
-  onError() {
+  error() {
     let ws = this.ws;
 
     ws.onerror = function (err: any) {

@@ -1,7 +1,7 @@
 import { Server } from "ws";
-import config from "../../config";
 import { initDatabase } from "./functions/database";
 import { handleWsEvents } from "./functions/handleEvents";
+import config from "../../config";
 
 class WebSuccItServer {
   server = new Server({ port: config.ws_port });
