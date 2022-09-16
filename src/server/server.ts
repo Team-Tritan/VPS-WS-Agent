@@ -4,7 +4,7 @@ import { handleWsEvents } from "./functions/handleEvents";
 import config from "../../config";
 
 class WebSuccItServer {
-  server = new Server({ port: config.ws_port });
+  server: Server = new Server({ port: config.ws_port });
   config = config;
 
   constructor() {
