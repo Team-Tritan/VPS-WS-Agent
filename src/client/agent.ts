@@ -1,3 +1,5 @@
+"use strict";
+
 import { WebSocket } from "ws";
 import { pushData } from "./functions/pushData";
 import config from "../../config";

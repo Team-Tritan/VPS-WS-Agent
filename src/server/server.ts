@@ -1,3 +1,5 @@
+"use strict";
+
 import { Server } from "ws";
 import { initDatabase } from "./functions/database";
 import { handleWsEvents } from "./functions/handleEvents";

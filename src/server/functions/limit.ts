@@ -1,3 +1,5 @@
+"use strict";
+
 export async function limit(rate: any, max: any) {
   const clients: any[] = [];
 

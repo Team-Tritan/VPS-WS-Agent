@@ -1,3 +1,5 @@
+"use strict";
+
 import { WebSocket, Server } from "ws";
 import { createOrUpdate } from "./database";
 import { limit } from "../functions/limit";

@@ -1,3 +1,5 @@
+"use strict";
+
 import os from "os";
 import config from "../../../config";
 import { formatSeconds, formatBytes } from "./parseData";
