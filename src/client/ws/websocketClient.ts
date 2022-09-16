@@ -1,9 +1,9 @@
 import WebSocket from "ws";
 import os from "os";
 import config from "../../../config";
-import { formatSeconds, formatBytes, getExternalIP } from "../functions/data";
+import { formatSeconds, formatBytes } from "../functions/data";
 
-export async function initWsConnection() {
+export async function pushData() {
   let ws = new WebSocket(`${config.hostname}:${config.port}`);
 
   ws.onopen = function () {
@@ -22,20 +22,20 @@ export async function initWsConnection() {
 
     ws.send(JSON.stringify(info));
 
-    console.log(`[WS Agent] --> Payload sent, closing connection.`);
+    console.log(`[WS Agent] --> Payload sent, closing connection. `);
 
-    return ws.close();
+    ws.close();
   };
 
   ws.onclose = function (e) {
     console.log(
-      "[WS Agent] Socket is closed. Reconnect will be attempted in 1 minute.",
+      "[WS Agent] --> Socket is closed. Reconnect will be attempted in 1 minute.",
       e.reason
     );
   };
 
   ws.onerror = function (err) {
-    console.error("[WS Agent] Error: ", err.message, "Closing socket");
+    console.error("[WS Agent] --> Error: ", err.message, ". Closing socket.");
     ws.close();
   };
 }
