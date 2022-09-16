@@ -15,9 +15,10 @@
   "author": "<github/dylanjamesdev>",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.14",
     "@types/mongoose": "^5.11.97",
     "@types/ws": "^8.5.3",
-    "axios": "^0.27.2",
+    "express": "^4.18.1",
     "mongoose": "6.1.1",
     "nodemon": "^2.0.19",
     "os": "^0.1.2",

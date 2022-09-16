@@ -3,7 +3,9 @@ import { createOrUpdate } from "../db/functions";
 
 export function handleWsEvents(server: any, config: any) {
   server.on("listening", () =>
-    console.log(`[WS Server] --> WS server listening on port ${config.port}.`)
+    console.log(
+      `[WS Server] --> WS server listening on ws://${config.hostname}:${config.ws_port}.`
+    )
   );
 
   server.on("connection", (ws: WebSocket) => {

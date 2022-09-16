@@ -4,7 +4,7 @@ import dataModel from "./dataModel";
 
 export async function initDatabaseConnection(server: any) {
   server.db = await mongoose.connect(config.mongodb).then((mongoose: any) => {
-    console.log(`[WS Server] --> Connected to DB, ${config.mongodb}.`);
+    console.log(`[WS Server] --> Connected to db, ${config.mongodb}.`);
     return mongoose;
   });
 }

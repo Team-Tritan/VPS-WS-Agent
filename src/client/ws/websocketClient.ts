@@ -4,10 +4,12 @@ import config from "../../../config";
 import { formatSeconds, formatBytes } from "../functions/data";
 
 export async function pushData() {
-  let ws = new WebSocket(`${config.hostname}:${config.port}`);
+  let ws = new WebSocket(`ws://${config.hostname}:${config.ws_port}`);
 
   ws.onopen = function () {
-    console.log(`[WS Agent] --> Connection initiated to ws server.`);
+    console.log(
+      `[WS Agent] --> Connection initiated to ws server, ws://${config.hostname}:${config.ws_port}.`
+    );
 
     let info = {
       hostname: os.hostname().toString(),
@@ -22,7 +24,10 @@ export async function pushData() {
 
     ws.send(JSON.stringify(info));
 
-    console.log(`[WS Agent] --> Payload sent, closing connection. `);
+    console.log(
+      `[WS Agent] --> Payload sent, closing connection. `,
+      JSON.stringify(info)
+    );
 
     ws.close();
   };
