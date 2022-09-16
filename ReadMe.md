@@ -7,7 +7,7 @@ Run in dev:
 Run in prod:
 
 - npm build
-- npm run prod-agent
+- npm run agent
 
 ## Server
 
@@ -18,4 +18,4 @@ Run in dev:
 Run in prod:
 
 - npm build
-- npm run prod-server
+- npm run server
