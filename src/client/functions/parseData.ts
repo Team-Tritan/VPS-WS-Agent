@@ -20,6 +20,4 @@ export function formatSeconds(secs: number) {
   return sign ? "-" + hhmmss : hhmmss;
 }
 
-export async function getExternalIP(x: any) {
-  return await requestIp.getClientIp(x);
-}
+

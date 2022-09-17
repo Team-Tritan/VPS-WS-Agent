@@ -11,7 +11,7 @@ export async function initDatabase(server: any) {
   });
 }
 
-export async function createOrUpdate(parsed: any) {
+export async function createOrUpdate(parsed: any, clientIp: any) {
   let x = await dataModel.findOne({ hostname: parsed.hostname });
 
   if (!x) {
@@ -26,7 +26,7 @@ export async function createOrUpdate(parsed: any) {
           uptime: parsed.data.uptime,
           memory_free: parsed.data.memory_free,
           total_memory: parsed.data.total_memory,
-          ip: parsed.data.ip,
+          ip: clientIp.toString(),
         },
       ],
     }).save();
@@ -41,7 +41,7 @@ export async function createOrUpdate(parsed: any) {
           uptime: parsed.data.uptime,
           memory_free: parsed.data.memory_free,
           memory_used: parsed.data.memory_used,
-          ip: parsed.data.ip,
+          ip: clientIp.toString(),
         },
       },
     });
