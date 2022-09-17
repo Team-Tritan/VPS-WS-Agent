@@ -55,10 +55,3 @@ class Agent {
 }
 
 new Agent();
-=======
-import { initWsConnection } from "./ws/initConnection";
-
-console.log(`[WS Client] --> Started, will attempt connect in 1 minute.`);
-
-setInterval(() => initWsConnection(), 1 * 60000);
->>>>>>> 28e68fda0d8c5c9e3f225120e1215d0b399430ab
