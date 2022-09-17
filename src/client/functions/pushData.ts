@@ -2,9 +2,11 @@
 
 import os from "os";
 import config from "../../../config";
-import { formatSeconds, formatBytes } from "./parseData";
+import { formatSeconds, formatBytes, getExternalIP } from "./parseData";
 
 export async function pushData(ws: any) {
+  let clientIP = getExternalIP(ws);
+
   let info = {
     hostname: os.hostname().toString(),
     data: {
@@ -13,6 +15,7 @@ export async function pushData(ws: any) {
       uptime: formatSeconds(os.uptime()).toString(),
       memory_free: formatBytes(os.freemem()),
       total_memory: formatBytes(os.totalmem()),
+      ip: clientIP,
     },
   };
 
