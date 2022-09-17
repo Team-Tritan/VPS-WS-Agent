@@ -7,7 +7,7 @@
     "tsc-init": "tsc --init",
     "dev-server": "cd src/server && nodemon server.ts",
     "dev-agent": "cd src/client && nodemon agent.ts",
-    "build": "tsc --build",
+    "build": "yarn tsc --init",
     "server": "cd dist/src/server && pm2 start server.js",
     "agent": "cd dist/src/client && pm2 start agent.js"
   },
