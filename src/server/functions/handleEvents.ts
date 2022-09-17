@@ -13,7 +13,8 @@ export function handleWsEvents(server: Server, config: any) {
 
   server.on("connection", (ws: WebSocket, _req: any) => {
     console.log(`[WS Server] --> ${server.clients.size} client(s) connected.`);
-    var clientIp = _req.socket.remoteAddress;
+    
+    let clientIp = _req.socket.remoteAddress;
 
     limit(config.agent_update_ms, 1);
 
