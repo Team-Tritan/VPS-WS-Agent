@@ -11,8 +11,10 @@ const dataModel = new mongoose.Schema({
       uptime: String,
       memory_free: String,
       total_memory: String,
+      ip: String,
     },
   ],
 });
 
-export default mongoose.models.Data || mongoose.model("Data", dataModel);
+export default mongoose.models.VM_Data ||
+  mongoose.model("VM_Data", dataModel, "VM_Data");

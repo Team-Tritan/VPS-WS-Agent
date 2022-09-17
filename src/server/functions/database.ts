@@ -25,7 +25,8 @@ export async function createOrUpdate(parsed: any) {
           platform: parsed.data.platform,
           uptime: parsed.data.uptime,
           memory_free: parsed.data.memory_free,
-          memory_used: parsed.data.memory_used,
+          total_memory: parsed.data.total_memory,
+          ip: parsed.data.ip,
         },
       ],
     }).save();
@@ -40,6 +41,7 @@ export async function createOrUpdate(parsed: any) {
           uptime: parsed.data.uptime,
           memory_free: parsed.data.memory_free,
           memory_used: parsed.data.memory_used,
+          ip: parsed.data.ip,
         },
       },
     });
