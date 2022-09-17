@@ -1,5 +1,7 @@
 "use strict";
 
+import requestIp from "request-ip";
+
 export function formatBytes(bytes: number, decimals = 2) {
   if (!+bytes) return "0 Bytes";
 
@@ -16,4 +18,8 @@ export function formatSeconds(secs: number) {
   const sign = secs < 0;
   const hhmmss = new Date(Math.abs(secs) * 1000).toISOString().substr(11, 8);
   return sign ? "-" + hhmmss : hhmmss;
+}
+
+export async function getExternalIP(x: any) {
+  return await requestIp.getClientIp(x);
 }
