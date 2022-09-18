@@ -1,7 +1,5 @@
 "use strict";
 
-import requestIp from "request-ip";
-
 export function formatBytes(bytes: number, decimals = 2) {
   if (!+bytes) return "0 Bytes";
 
@@ -19,5 +17,3 @@ export function formatSeconds(secs: number) {
   const hhmmss = new Date(Math.abs(secs) * 1000).toISOString().substr(11, 8);
   return sign ? "-" + hhmmss : hhmmss;
 }
-
-
