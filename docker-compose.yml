@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  agent:
+    build: "./Agent_Dockerfile"
+  server:
+    build: "./Server_Dockerfile"
