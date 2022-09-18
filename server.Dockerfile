@@ -4,8 +4,8 @@ COPY . .
 
 RUN yarn 
 
-RUN cd src/server
+RUN npm run build
 
 EXPOSE 80
 
-CMD ["ts-node", "server.ts"]
+CMD ["node", "./dist/src/client/server.ts"]

@@ -4,6 +4,6 @@ COPY . .
 
 RUN yarn 
 
-RUN cd src/client
+RUN npm run build
 
-CMD ["ts-node", "agent.ts"]
+CMD ["node", "./dist/src/client/agent.ts"]
