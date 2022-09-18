@@ -12,8 +12,7 @@ The purpose of this project is to grab data from pc's and send it to the server 
 
 **Run in prod:**
 
-- npm build
-- npm run agent
+- docker-compose up agent
 
 ## **Server**
 
@@ -23,8 +22,7 @@ The purpose of this project is to grab data from pc's and send it to the server 
 
 **Run in prod:**
 
-- npm build
-- npm run server
+- docker-compose up server
 
 # Contributing
 

@@ -1,3 +1,5 @@
+MAINTAINER Dylan James <github/dylanjamesdev>
+
 FROM node:latest
 
 COPY . .
