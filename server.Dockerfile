@@ -2,8 +2,6 @@ FROM node:latest
 
 COPY . .
 
-RUN npm i -g yarn
-
 RUN yarn 
 
 RUN cd src/server
