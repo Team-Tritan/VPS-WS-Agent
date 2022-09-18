@@ -1,14 +1,15 @@
 version: "3.3"
+name: vm-management
 services:
-  agent:
-    container_name: client
+  ws-agent:
+    container_name: ws-client
     restart: unless-stopped
     build:
       context: .
       dockerfile: ./agent.Dockerfile
     network_mode: host
-  server:
-    container_name: server
+  ws-server:
+    container_name: ws-server
     restart: unless-stopped
     build:
       context: .
