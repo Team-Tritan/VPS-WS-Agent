@@ -1,5 +1,4 @@
 version: "3.3"
-name: vm-management
 services:
   ws-agent:
     container_name: ws-client
