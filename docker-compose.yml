@@ -3,10 +3,14 @@ services:
   agent:
     container_name: client
     restart: unless-stopped
-    build: "./agent.Dockerfile"
+    build:
+      context: .
+      dockerfile: ./agent.Dockerfile
     network_mode: host
   server:
     container_name: server
     restart: unless-stopped
-    build: "./server.Dockerfile"
+    build:
+      context: .
+      dockerfile: ./server.Dockerfile
     network_mode: host
