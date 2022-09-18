@@ -1,13 +1,13 @@
 version: "3.3"
 services:
-  ws-agent:
+  agent:
     container_name: ws-client
     restart: unless-stopped
     build:
       context: .
       dockerfile: ./agent.Dockerfile
     network_mode: host
-  ws-server:
+  server:
     container_name: ws-server
     restart: unless-stopped
     build:
