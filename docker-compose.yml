@@ -1,6 +1,12 @@
-version: "3.9"
+version: "3.3"
 services:
   agent:
-    build: "./Agent_Dockerfile"
+    container_name: client
+    restart: unless-stopped
+    build: "./agent.Dockerfile"
+    network_mode: host
   server:
-    build: "./Server_Dockerfile"
+    container_name: server
+    restart: unless-stopped
+    build: "./server.Dockerfile"
+    network_mode: host

@@ -2,7 +2,7 @@
 
 import { WebSocket } from "ws";
 import { pushData } from "./functions/pushData";
-import config from "../../config";
+import config from "../config";
 
 class Agent {
   ws: WebSocket = new WebSocket(`ws://${config.hostname}:${config.ws_port}`);

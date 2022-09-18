@@ -1,7 +1,7 @@
 "use strict";
 
 import os from "os";
-import config from "../../../config";
+import config from "../../config";
 import { formatSeconds, formatBytes } from "./parseData";
 
 export async function pushData(ws: any) {

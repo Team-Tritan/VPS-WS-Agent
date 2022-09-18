@@ -2,7 +2,6 @@
 
 import { WebSocket, Server } from "ws";
 import { createOrUpdate } from "./database";
-import { limit } from "../functions/limit";
 
 export function handleWsEvents(server: Server, config: any) {
   server.on("listening", () =>
@@ -12,11 +11,11 @@ export function handleWsEvents(server: Server, config: any) {
   );
 
   server.on("connection", (ws: WebSocket, _req: any) => {
-    console.log(`[WS Server] --> ${server.clients.size} client(s) connected.`);
-    
     let clientIp = _req.socket.remoteAddress;
 
-    limit(config.agent_update_ms, 1);
+    console.log(
+      `[WS Server] --> ${server.clients.size} client(s) connected. >> New client connected: ${clientIp}`
+    );
 
     ws.on("message", async (data: any) => {
       console.log(`[WS Server] --> Server received data: ${data}`);

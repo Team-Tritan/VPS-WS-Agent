@@ -3,7 +3,7 @@
 import { Server } from "ws";
 import { initDatabase } from "./functions/database";
 import { handleWsEvents } from "./functions/handleEvents";
-import config from "../../config";
+import config from "../config";
 
 class WebSuccItServer {
   server: Server = new Server({ port: config.ws_port });
