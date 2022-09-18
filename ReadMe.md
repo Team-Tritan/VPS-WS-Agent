@@ -2,7 +2,9 @@
 
 The purpose of this project is to grab data from pc's and send it to the server which stores it in MongoDB and is sorted by hostnames. (soonTM) will display on a site probably as a uptime page for vps'.
 
-# Startup
+Currently grabs the following data from client: time, hostname, ip, platform, uptime, memory_free, total_memory.
+
+# Startup:
 
 ## **Agent**
 
