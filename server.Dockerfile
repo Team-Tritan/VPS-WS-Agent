@@ -8,4 +8,4 @@ RUN npm run build
 
 EXPOSE 80
 
-CMD ["node", "./dist/src/client/server.ts"]
+CMD ["node", "./dist/src/server/server.js"]
