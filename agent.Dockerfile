@@ -6,4 +6,4 @@ RUN yarn
 
 RUN npm run build
 
-CMD ["node", "./dist/src/client/agent.js"]
+CMD ["node", "./dist/client/agent.js"]
