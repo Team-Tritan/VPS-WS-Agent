@@ -1,6 +1,5 @@
 import express, { Application, Request, Response } from "express";
 import { initDatabase, doDBMagic } from "./functions/database";
-import dataModel from "./models/dataModel";
 import config from "../config";
 
 class WebHelper {
