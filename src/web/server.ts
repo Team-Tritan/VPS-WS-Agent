@@ -20,6 +20,7 @@ app.get("/", async (_req: Request, res: Response) => {
 
   return res.render("index", {
     hosts: arr,
+    update_time: config.agent_update_ms,
   });
 });
 

@@ -1,4 +1,6 @@
+<!DOCTYPE html>
 <html>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <style>
     body {
       background-color: black;
@@ -50,10 +52,26 @@
     <h1 class="page-title">Reporting Nodes</h1>
     <div>
       <% for(i of hosts){ %>
-      <div class="tooltip node active">
+      <div class="tooltip node active" id="<%-i.hostname%>">
         <span class="tooltiptext">
           <b><p><%-i.hostname%></p></b>
           <% let mostRecent = i.data[i.data.length - 1]; %>
+
+          <script>
+            $(document).ready(function () {
+              var currentTime = new Date();
+              var lastPost = new Date("<%-mostRecent.time%>");
+              var ms = currentTime - lastPost;
+
+              var updateTime = "<%-update_time%>";
+              console.log(updateTime);
+              if (updateTime < ms) {
+                $("#<%-i.hostname%>").removeClass("active");
+                $("#<%-i.hostname%>").addClass("inactive");
+              }
+            });
+          </script>
+
           <p>Last Update: <%-mostRecent.time %></p>
           <p>Platform: <%-mostRecent.platform%></p>
           <p>Uptime: <%-mostRecent.uptime%></p>
