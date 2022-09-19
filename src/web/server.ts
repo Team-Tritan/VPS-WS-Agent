@@ -1,5 +1,5 @@
 import express, { Application, Request, Response } from "express";
-import { initDatabase, doDBMagic } from "./functions/database";
+import { initDatabase, doDBMagic } from "./functions/handleData";
 import config from "../config";
 
 class WebHelper {

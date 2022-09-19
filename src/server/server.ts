@@ -1,7 +1,7 @@
 "use strict";
 
 import { Server } from "ws";
-import { initDatabase } from "./functions/database";
+import { initDatabase } from "./functions/handleData";
 import { handleWsEvents } from "./functions/handleEvents";
 import config from "../config";
 

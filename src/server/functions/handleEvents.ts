@@ -1,7 +1,7 @@
 "use strict";
 
 import { WebSocket, Server } from "ws";
-import { createOrUpdate } from "./database";
+import { createOrUpdate } from "./handleData";
 
 export function handleWsEvents(server: Server, config: any) {
   server.on("listening", () =>
