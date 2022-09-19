@@ -15,7 +15,7 @@ services:
       dockerfile: ./server.Dockerfile
     network_mode: host
   web:
-    container-name: ws-web
+    container_name: ws-web
     restart: unless-stopped
     build:
       context: .
