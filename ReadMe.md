@@ -1,4 +1,4 @@
-# Websocket Server
+# VPS Info Agent
 
 The purpose of this project is to grab data from pc's and send it to the server which stores it in MongoDB and is sorted by hostnames. (soonTM) will display on a site probably as a uptime page for vps'.
 
