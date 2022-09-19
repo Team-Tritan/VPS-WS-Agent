@@ -14,3 +14,10 @@ services:
       context: .
       dockerfile: ./server.Dockerfile
     network_mode: host
+  web:
+    container-name: ws-web
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./web.Dockerfile
+    network_mode: host
