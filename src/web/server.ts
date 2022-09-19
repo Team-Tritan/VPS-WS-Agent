@@ -13,6 +13,7 @@ class WebHelper {
 
   setup() {
     initDatabase();
+    this.app.set("views", "./views");
     this.app.set("view engine", "ejs");
     this.app.use(express.json());
   }
@@ -30,7 +31,9 @@ class WebHelper {
 
   listen() {
     this.app.listen(config.web_helper_port, () => {
-      console.log(`[WS Web Helper] --> Listening on port ${config.web_helper_port}.`);
+      console.log(
+        `[WS Web Helper] --> Listening on port ${config.web_helper_port}.`
+      );
     });
   }
 }
