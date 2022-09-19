@@ -5,3 +5,4 @@ sudo systemctl enable docker
 sudo systemctl start docker
 sudo docker-compose up -d
 sudo docker-compose kill server
+sudo docker-compose kill web
