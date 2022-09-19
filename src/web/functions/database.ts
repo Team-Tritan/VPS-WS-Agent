@@ -5,8 +5,8 @@ import config from "../../config";
 import dataModel from "../models/dataModel";
 
 export async function initDatabase() {
-  await mongoose.connect(config.mongodb).then((mongoose: any) => {
-    console.log(`[WS Web Helper] --> Connected to db, ${config.mongodb}.`);
+  await mongoose.connect(config.mongodb_uri).then((mongoose: any) => {
+    console.log(`[WS Web Helper] --> Connected to db, ${config.mongodb_uri}.`);
     return mongoose;
   });
 }

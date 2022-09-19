@@ -5,10 +5,12 @@ import config from "../../config";
 import dataModel from "../models/dataModel";
 
 export async function initDatabase(server: any) {
-  server.db = await mongoose.connect(config.mongodb).then((mongoose: any) => {
-    console.log(`[WS Server] --> Connected to db, ${config.mongodb}.`);
-    return mongoose;
-  });
+  server.db = await mongoose
+    .connect(config.mongodb_uri)
+    .then((mongoose: any) => {
+      console.log(`[WS Server] --> Connected to db, ${config.mongodb_uri}.`);
+      return mongoose;
+    });
 }
 
 export async function createOrUpdate(parsed: any, clientIp: any) {

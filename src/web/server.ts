@@ -29,8 +29,8 @@ class WebHelper {
   }
 
   listen() {
-    this.app.listen(config.web_port, () => {
-      console.log(`[WS Web Helper] --> Listening on port ${config.web_port}.`);
+    this.app.listen(config.web_helper_port, () => {
+      console.log(`[WS Web Helper] --> Listening on port ${config.web_helper_port}.`);
     });
   }
 }

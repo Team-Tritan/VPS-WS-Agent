@@ -5,7 +5,9 @@ import { pushData } from "./functions/pushData";
 import config from "../config";
 
 class Agent {
-  ws: WebSocket = new WebSocket(`ws://${config.hostname}:${config.ws_port}`);
+  ws: WebSocket = new WebSocket(
+    `ws://${config.ws_server_hostname}:${config.ws_server_port}`
+  );
 
   constructor() {
     this.hewwo();
@@ -24,7 +26,7 @@ class Agent {
   open() {
     this.ws.onopen = function () {
       console.log(
-        `[WS Agent] --> Connection initiated to ws server, ws://${config.hostname}:${config.ws_port}.`
+        `[WS Agent] --> Connection initiated to ws server, ws://${config.ws_server_hostname}:${config.ws_server_port}.`
       );
     };
   }

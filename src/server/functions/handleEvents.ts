@@ -6,7 +6,7 @@ import { createOrUpdate } from "./database";
 export function handleWsEvents(server: Server, config: any) {
   server.on("listening", () =>
     console.log(
-      `[WS Server] --> WS server listening on ws://${config.hostname}:${config.ws_port}.`
+      `[WS Server] --> WS server listening on ws://${config.ws_server_hostname}:${config.ws_server_port}.`
     )
   );
 
