@@ -4,6 +4,8 @@ The purpose of this project is to grab data from pc's and send it to the server 
 
 Currently grabs the following data from client: time, hostname, ip, platform, uptime, memory_free, total_memory.
 
+Install scripts are located in ./scripts, they will literally automate the entire docker installation process as well as starting services in docker.
+
 # Startup:
 
 ## **Agent**
