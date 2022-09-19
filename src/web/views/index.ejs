@@ -1,0 +1,67 @@
+<html>
+  <style>
+    body {
+      background-color: black;
+      margin-left: 50;
+      margin-top: 50;
+    }
+    .page-title {
+      color: white;
+      margin-bottom: 100;
+    }
+    .node {
+      width: 55px;
+      height: 55px;
+      border: solid 2px black;
+      background-color: green;
+    }
+    .active {
+      background-color: green;
+    }
+    .inactive {
+      background-color: red;
+    }
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+    }
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 180px;
+      background-color: black;
+      border-color: #7289da;
+      border-style: solid;
+      border-width: thin;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+      position: absolute;
+      z-index: 1;
+      top: -5px;
+      left: 105%;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+  </style>
+  <body>
+    <h1 class="page-title">Reporting Nodes</h1>
+    <div>
+      <% for(i of arr){ %>
+      <div class="tooltip node active">
+        <span class="tooltiptext">
+          <b><p><%-i.hostname%></p></b>
+          <% let dataArr = i.data[i.data.length - 1]; %>
+          <p>Last Update: <%-dataArr.time %></p>
+          <p>Platform: <%-dataArr.platform%></p>
+          <p>Uptime: <%-dataArr.uptime%></p>
+          <p>Memory Used:</p>
+          <p>IP: <%-dataArr.ip%></p>
+        </span>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

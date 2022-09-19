@@ -7,9 +7,11 @@
     "tsc-init": "tsc --init",
     "dev-server": "cd src/server && nodemon server.ts",
     "dev-agent": "cd src/client && nodemon agent.ts",
+    "dev-web": "cd src/web && nodemon server.ts",
     "build": "tsc --build",
     "server": "cd dist/src/server && pm2 start server.js",
-    "agent": "cd dist/src/client && pm2 start agent.js"
+    "agent": "cd dist/src/client && pm2 start agent.js",
+    "web": "cd dist/src/web && pm2 start server.js"
   },
   "author": "<github/dylanjamesdev>",
   "license": "ISC",
@@ -18,6 +20,7 @@
     "@types/mongoose": "^5.11.97",
     "@types/ws": "^8.5.3",
     "bufferutil": "^4.0.6",
+    "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mongoose": "6.1.1",
     "nodemon": "^2.0.19",
