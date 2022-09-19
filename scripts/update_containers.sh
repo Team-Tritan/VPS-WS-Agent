@@ -1,5 +1,4 @@
 #!/bin/bash
-
 cd  ..
 docker-compose kill 
 docker system prune -a 
