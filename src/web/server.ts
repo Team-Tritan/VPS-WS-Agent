@@ -1,5 +1,5 @@
 import express, { Application, Request, Response } from "express";
-import { initDatabase } from "./functions/database";
+import { initDatabase, doDBMagic } from "./functions/database";
 import dataModel from "./models/dataModel";
 import config from "../config";
 
@@ -8,7 +8,7 @@ class WebHelper {
 
   constructor() {
     this.setup();
-    this.uiRoute();
+    this.routes();
     this.listen();
   }
 
@@ -18,14 +18,9 @@ class WebHelper {
     this.app.use(express.json());
   }
 
-  uiRoute() {
+  routes() {
     this.app.get("/", async (_req: Request, res: Response) => {
-      let dbData = await dataModel.find();
-      let arr: Array<Object> = [];
-
-      await dbData.forEach((x) => {
-        arr.push({ hostname: x.hostname, data: x.data });
-      });
+      let arr = await doDBMagic();
 
       return res.render("index", {
         hosts: arr,
