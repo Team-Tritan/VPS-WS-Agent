@@ -7,7 +7,7 @@
     }
     .page-title {
       color: white;
-      margin-bottom: 100;
+      margin-bottom: 80;
     }
     .node {
       width: 55px;
@@ -49,16 +49,16 @@
   <body>
     <h1 class="page-title">Reporting Nodes</h1>
     <div>
-      <% for(i of arr){ %>
+      <% for(i of hosts){ %>
       <div class="tooltip node active">
         <span class="tooltiptext">
           <b><p><%-i.hostname%></p></b>
-          <% let dataArr = i.data[i.data.length - 1]; %>
-          <p>Last Update: <%-dataArr.time %></p>
-          <p>Platform: <%-dataArr.platform%></p>
-          <p>Uptime: <%-dataArr.uptime%></p>
+          <% let mostRecent = i.data[i.data.length - 1]; %>
+          <p>Last Update: <%-mostRecent.time %></p>
+          <p>Platform: <%-mostRecent.platform%></p>
+          <p>Uptime: <%-mostRecent.uptime%></p>
           <p>Memory Used:</p>
-          <p>IP: <%-dataArr.ip%></p>
+          <p>IP: <%-mostRecent.ip%></p>
         </span>
       </div>
       <% } %>

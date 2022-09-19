@@ -19,7 +19,7 @@ app.get("/", async (_req: Request, res: Response) => {
   });
 
   return res.render("index", {
-    arr: arr,
+    hosts: arr,
   });
 });
 
