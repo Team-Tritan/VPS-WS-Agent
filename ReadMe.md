@@ -15,6 +15,8 @@ Currently grabs the following data from client: time, hostname, ip, platform, up
 **Run in prod:**
 
 - docker-compose up agent
+  OR
+- npm run agent (have pm2 installed globally\*)
 
 ## **Server**
 
@@ -25,6 +27,20 @@ Currently grabs the following data from client: time, hostname, ip, platform, up
 **Run in prod:**
 
 - docker-compose up server
+  OR
+- npm run server (have pm2 installed globally\*)
+
+## **Web Companion**
+
+**Run in dev:**
+
+- npm run dev-web
+
+**Run in prod:**
+
+- docker-compose up web
+  OR
+- npm run web (have pm2 installed globally\*)
 
 # Contributing
 
