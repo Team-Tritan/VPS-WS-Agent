@@ -52,8 +52,3 @@ Feel free to do any changes or submit any PR's :p
 
 No license kek
 
-# Images
-
-![](https://im.sleepdeprived.wtf/api/content/raw/pKKUmFeCms.png)
-
-![](https://im.sleepdeprived.wtf/api/content/raw/ECswBGRjNr.png)
