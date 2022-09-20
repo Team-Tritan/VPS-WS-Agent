@@ -2,7 +2,7 @@
 
 import mongoose from "mongoose";
 import config from "../../config";
-import dataModel from "../models/dataModel";
+import dataModel from "../../models/dataModel";
 
 export async function initDatabase() {
   await mongoose.connect(config.mongodb_uri).then((mongoose: any) => {
