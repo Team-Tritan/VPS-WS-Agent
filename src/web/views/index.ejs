@@ -64,8 +64,10 @@
               var ms = currentTime - lastPost;
 
               var updateTime = "<%-update_time%>";
-              console.log(updateTime);
               if (updateTime < ms) {
+                console.log(
+                  "<%-i.hostname%> has not responded since <%-mostRecent.time%> which is more than the agent report time."
+                );
                 $("#<%-i.hostname%>").removeClass("active");
                 $("#<%-i.hostname%>").addClass("inactive");
               }
