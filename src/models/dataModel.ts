@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 
 const dataModel = new mongoose.Schema({
   hostname: String,
+  hypervisor: Boolean,
   data: [
     {
       time: String,
