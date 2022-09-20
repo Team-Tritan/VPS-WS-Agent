@@ -402,7 +402,7 @@ braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-bson@^4.2.2, bson@^4.6.0, bson@^4.6.5, bson@^4.7.0:
+bson@^4.6.2, bson@^4.6.3, bson@^4.6.5, bson@^4.7.0:
   version "4.7.0"
   resolved "https://registry.npmjs.org/bson/-/bson-4.7.0.tgz"
   integrity sha512-VrlEE4vuiO1WTpfof4VmaVolCVYkYTgB9iWgYNOrVlnifpME/06fhFRmONgBhClD5pFC1t9ZWqFUQEQAzY43bA==
@@ -1065,11 +1065,6 @@ jsonfile@^4.0.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
-kareem@2.3.2:
-  version "2.3.2"
-  resolved "https://registry.npmjs.org/kareem/-/kareem-2.3.2.tgz"
-  integrity sha512-STHz9P7X2L4Kwn72fA4rGyqyXdmrMSdxqHx9IXon/FXluXieaFA6KJ2upcHAHxQPQ0LeM/OjLrhFxifHewOALQ==
-
 kareem@2.4.1:
   version "2.4.1"
   resolved "https://registry.npmjs.org/kareem/-/kareem-2.4.1.tgz"
@@ -1178,7 +1173,7 @@ module-details-from-path@^1.0.3:
   resolved "https://registry.npmjs.org/module-details-from-path/-/module-details-from-path-1.0.3.tgz"
   integrity sha512-ySViT69/76t8VhE1xXHK6Ch4NcDd26gx0MzKXLO+F7NOtnqH68d9zF94nT8ZWSxXh8ELOERsnJO/sWt1xZYw5A==
 
-mongodb-connection-string-url@^2.2.0, mongodb-connection-string-url@^2.5.3:
+mongodb-connection-string-url@^2.5.2, mongodb-connection-string-url@^2.5.3:
   version "2.5.3"
   resolved "https://registry.npmjs.org/mongodb-connection-string-url/-/mongodb-connection-string-url-2.5.3.tgz"
   integrity sha512-f+/WsED+xF4B74l3k9V/XkTVj5/fxFH2o5ToKXd8Iyi5UhM+sO9u0Ape17Mvl/GkZaFtM0HQnzAG5OTmhKw+tQ==
@@ -1186,14 +1181,15 @@ mongodb-connection-string-url@^2.2.0, mongodb-connection-string-url@^2.5.3:
     "@types/whatwg-url" "^8.2.1"
     whatwg-url "^11.0.0"
 
-mongodb@4.2.1:
-  version "4.2.1"
-  resolved "https://registry.npmjs.org/mongodb/-/mongodb-4.2.1.tgz"
-  integrity sha512-nDC+ulM/Ea3Q2VG5eemuGfB7T4ORwrtKegH2XW9OLlUBgQF6OTNrzFCS1Z3SJGVA+T0Sr1xBYV6DMnp0A7us0g==
+mongodb@4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-4.7.0.tgz#99f7323271d93659067695b60e7b4efee2de9bf0"
+  integrity sha512-HhVar6hsUeMAVlIbwQwWtV36iyjKd9qdhY+s4wcU8K6TOj4Q331iiMy+FoPuxEntDIijTYWivwFJkLv8q/ZgvA==
   dependencies:
-    bson "^4.6.0"
+    bson "^4.6.3"
     denque "^2.0.1"
-    mongodb-connection-string-url "^2.2.0"
+    mongodb-connection-string-url "^2.5.2"
+    socks "^2.6.2"
   optionalDependencies:
     saslprep "^1.0.3"
 
@@ -1222,39 +1218,23 @@ mongoose@*:
     ms "2.1.3"
     sift "16.0.0"
 
-mongoose@6.1.1:
-  version "6.1.1"
-  resolved "https://registry.npmjs.org/mongoose/-/mongoose-6.1.1.tgz"
-  integrity sha512-9IODOeFDxW0hzvGmE2Yvy/TaFGLIXQWgE/L1D/x3lKVo8PGyokklgnvX0/Qia7lxiZvxe6+na1aA7v0gT+TN+g==
+mongoose@6.4.6:
+  version "6.4.6"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-6.4.6.tgz#57bc7ae68de56abcc5e890284f2d10acac863aa2"
+  integrity sha512-ZAfNCWgXhwev6k/+rMzjHIJ/+wLkundQU/i+aUTqmCgGoYqc+B5e4EC4Y3E1XaLzNXiWID1/vocSM6zs5IAGvA==
   dependencies:
-    bson "^4.2.2"
-    kareem "2.3.2"
-    mongodb "4.2.1"
-    mpath "0.8.4"
-    mquery "4.0.0"
-    ms "2.1.2"
-    regexp-clone "1.0.0"
-    sift "13.5.2"
-    sliced "1.0.1"
-
-mpath@0.8.4:
-  version "0.8.4"
-  resolved "https://registry.npmjs.org/mpath/-/mpath-0.8.4.tgz"
-  integrity sha512-DTxNZomBcTWlrMW76jy1wvV37X/cNNxPW1y2Jzd4DZkAaC5ZGsm8bfGfNOthcDuRJujXLqiuS6o3Tpy0JEoh7g==
+    bson "^4.6.2"
+    kareem "2.4.1"
+    mongodb "4.7.0"
+    mpath "0.9.0"
+    mquery "4.0.3"
+    ms "2.1.3"
+    sift "16.0.0"
 
 mpath@0.9.0:
   version "0.9.0"
   resolved "https://registry.npmjs.org/mpath/-/mpath-0.9.0.tgz"
   integrity sha512-ikJRQTk8hw5DEoFVxHG1Gn9T/xcjtdnOKIU1JTmGjZZlg9LST2mBLmcX3/ICIbgJydT2GOc15RnNy5mHmzfSew==
-
-mquery@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/mquery/-/mquery-4.0.0.tgz"
-  integrity sha512-nGjm89lHja+T/b8cybAby6H0YgA4qYC/lx6UlwvHGqvTq8bDaNeCwl1sY8uRELrNbVWJzIihxVd+vphGGn1vBw==
-  dependencies:
-    debug "4.x"
-    regexp-clone "^1.0.0"
-    sliced "1.0.1"
 
 mquery@4.0.3:
   version "4.0.3"
@@ -1622,11 +1602,6 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-regexp-clone@1.0.0, regexp-clone@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/regexp-clone/-/regexp-clone-1.0.0.tgz"
-  integrity sha512-TuAasHQNamyyJ2hb97IuBEif4qBHGjPHBS64sZwytpLEqtBQ1gPJTnOaQ6qmpET16cK14kkjbazl6+p0RRv0yw==
-
 require-in-the-middle@^5.0.0:
   version "5.2.0"
   resolved "https://registry.npmjs.org/require-in-the-middle/-/require-in-the-middle-5.2.0.tgz"
@@ -1747,11 +1722,6 @@ side-channel@^1.0.4:
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
 
-sift@13.5.2:
-  version "13.5.2"
-  resolved "https://registry.npmjs.org/sift/-/sift-13.5.2.tgz"
-  integrity sha512-+gxdEOMA2J+AI+fVsCqeNn7Tgx3M9ZN9jdi95939l1IJ8cZsqS8sqpJyOkic2SJk+1+98Uwryt/gL6XDaV+UZA==
-
 sift@16.0.0:
   version "16.0.0"
   resolved "https://registry.npmjs.org/sift/-/sift-16.0.0.tgz"
@@ -1769,11 +1739,6 @@ simple-update-notifier@^1.0.7:
   dependencies:
     semver "~7.0.0"
 
-sliced@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/sliced/-/sliced-1.0.1.tgz"
-  integrity sha512-VZBmZP8WU3sMOZm1bdgTadsQbcscK0UM8oKxKVBs4XAhUo2Xxzm/OFMGBkPusxw9xL3Uy8LrzEqGqJhclsr0yA==
-
 smart-buffer@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npmjs.org/smart-buffer/-/smart-buffer-4.2.0.tgz"
@@ -1788,7 +1753,7 @@ socks-proxy-agent@5, socks-proxy-agent@^5.0.0:
     debug "4"
     socks "^2.3.3"
 
-socks@^2.3.3, socks@^2.7.0:
+socks@^2.3.3, socks@^2.6.2, socks@^2.7.0:
   version "2.7.0"
   resolved "https://registry.npmjs.org/socks/-/socks-2.7.0.tgz"
   integrity sha512-scnOe9y4VuiNUULJN72GrM26BNOjVsfPXI+j+98PkyEfsIXroa5ofyjT+FzGvn/xHs73U2JtoBYAVx9Hl4quSA==
