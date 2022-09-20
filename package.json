@@ -14,7 +14,7 @@
     "web": "cd dist/src/web && pm2 start server.js"
   },
   "author": "<github/dylanjamesdev>",
-  "license": "ISC",
+  "license": "NONE",
   "dependencies": {
     "@types/express": "^4.17.14",
     "@types/mongoose": "^5.11.97",
@@ -22,7 +22,7 @@
     "bufferutil": "^4.0.6",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "mongoose": "6.1.1",
+    "mongoose": "6.4.6",
     "nodemon": "^2.0.19",
     "os": "^0.1.2",
     "pm2": "^5.2.0",
