@@ -54,6 +54,6 @@ No license kek
 
 # Images
 
-![](https://im.sleepdeprived.wtf/api/content/raw/733EcNUFSc.png)
+![](https://im.sleepdeprived.wtf/api/content/raw/pKKUmFeCms.png)
 
 ![](https://im.sleepdeprived.wtf/api/content/raw/ECswBGRjNr.png)
