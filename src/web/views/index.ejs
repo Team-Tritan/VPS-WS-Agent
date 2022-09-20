@@ -1,75 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <style>
-    body {
-      background-color: black;
-      margin-left: 35px;
-      margin-top: 35px;
-    }
-    .page-title {
-      color: white;
-      margin-bottom: 50px;
-    }
-    .node {
-      width: 55px;
-      height: 55px;
-      border: solid 2px black;
-      background-color: green;
-    }
-    .active {
-      background-color: green;
-    }
-    .inactive {
-      background-color: red;
-    }
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      border-bottom: 1px dotted black;
-    }
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 180px;
-      background-color: black;
-      border-color: #7289da;
-      border-style: solid;
-      border-width: thin;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px 0;
-      position: absolute;
-      z-index: 1;
-      top: -5px;
-      left: 105%;
-    }
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-    }
-  </style>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      body {
+        background-color: black;
+        margin-left: 35px;
+        margin-top: 35px;
+      }
+      .page-title {
+        color: white;
+      }
+      .white {
+        color: white;
+      }
+      .nodes-offline-text {
+        margin-bottom: 50px;
+      }
+      .node {
+        width: 55px;
+        height: 55px;
+        border: solid 2px black;
+        background-color: green;
+      }
+      .active {
+        background-color: green;
+      }
+      .inactive {
+        background-color: red;
+      }
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+      }
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 180px;
+        background-color: black;
+        border-color: #7289da;
+        border-style: solid;
+        border-width: thin;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 105%;
+      }
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+      }
+    </style>
+    <script>
+      let offlineCount = 0;
+    </script>
+  </head>
   <body>
-    <h1 class="page-title">Reporting Nodes</h1>
+    <h1 class="page-title">VM Summary</h1>
+    <p class="white">Total Nodes: <%-hosts.length%></p>
+    <p id="offline-count" class="white nodes-offline-text">Nodes Offline: 0</p>
+
     <div>
       <% for(i of hosts){ %>
       <div class="tooltip node active" id="<%-i.hostname%>">
-        <span class="tooltiptext">
+        <span id="<%-i.hostname%>-tooltip" class="tooltiptext">
           <b><p><%-i.hostname%></p></b>
           <% let mostRecent = i.data[i.data.length - 1]; %>
 
           <script>
             $(document).ready(function () {
-              var currentTime = new Date();
-              var lastPost = new Date("<%-mostRecent.time%>");
-              var ms = currentTime - lastPost;
+              let currentTime = new Date();
+              let lastPost = new Date("<%-mostRecent.time%>");
+              let diff = currentTime - lastPost;
 
-              var updateTime = "<%-update_time%>";
-              if (updateTime < ms) {
+              let updateTime = "<%-update_time%>";
+
+              if (updateTime < diff) {
                 console.log(
                   "<%-i.hostname%> has not responded since <%-mostRecent.time%> which is more than the agent report time."
                 );
+
                 $("#<%-i.hostname%>").removeClass("active");
+
                 $("#<%-i.hostname%>").addClass("inactive");
+
+                offlineCount += 1;
+                $("#offline-count").text(`Nodes Offline: ${offlineCount}`);
+                $("#<%-i.hostname%>-tooltip").html(
+                  "<b><p><%-i.hostname%></p></b><p>Agent has not posted since <%-mostRecent.time%>.</p><p>Last Update: <%-mostRecent.time %></p>"
+                );
               }
             });
           </script>
@@ -85,4 +107,9 @@
       <% } %>
     </div>
   </body>
+  <script>
+    setTimeout(function () {
+      location.reload();
+    }, 10000);
+  </script>
 </html>
